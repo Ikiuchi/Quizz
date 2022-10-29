@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Translation Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Translation
+  m_TableCollectionNameGuidString: 54936d141ffaafa4eaf411bb6a624ae1
+  m_Entries:
+  - m_Id: 14683574272
+    m_Key: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85814775808
+    m_Key: Editor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28057951113216
+    m_Key: NextQuestion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29271585558528
+    m_Key: PreviousQuestion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62193684287488
+    m_Key: EnterText...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62892895735808
+    m_Key: Question
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62952765231104
+    m_Key: Answer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65019131039744
+    m_Key: Add
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70206163881984
+    m_Key: ClosestAnwser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70296446275584
+    m_Key: AgainstTime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70387374592000
+    m_Key: MysteryBox
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70958068371456
+    m_Key: Back
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8459493595723857948
+  references:
+    version: 2
+    RefIds:
+    - rid: 8459493595723857948
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1667039645165
