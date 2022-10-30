@@ -66,6 +66,10 @@ MonoBehaviour:
     m_Localized: Retour
     m_Metadata:
       m_Items: []
+  - m_Id: 210242758873088
+    m_Localized: Supprime
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,41 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System.Xml.Serialization;
 using System.IO;
 
-public class SaveMgr : MonoBehaviour
+public class SaveMgr
 {
-	public static SaveMgr Instance;
-	//Application.dataPath
-
-	private void Awake()
+	public static void Serialize(object item, string path)
 	{
-		if (Instance == null)
-			Instance = this;
-		else
-			Destroy(gameObject);
-
-		DontDestroyOnLoad(Instance);
+		XmlSerializer serializer = new XmlSerializer(item.GetType());
+		StreamWriter writer = new StreamWriter(path);
+		serializer.Serialize(writer.BaseStream, item);
+		writer.Close();
 	}
 
-	public void Save(string fileName)
+	public static T Deserialize<T>(string path)
 	{
-		
-	}
+		if (!File.Exists(path))
+			return default;
 
-	public void Load(string fileName)
-	{
-		
-	}
-
-	public static void LoadFromFile(string filepath)
-	{
-		XmlSerializer serializer = new XmlSerializer(typeof(ClosestAnswerMgr));
-		using (FileStream stream = new FileStream(filepath, FileMode.Open))
-		{
-			ClosestAnswerMgr c;
-			c = serializer.Deserialize(stream) as ClosestAnswerMgr;
-		}
+		XmlSerializer serializer = new XmlSerializer(typeof(T));
+		StreamReader reader = new StreamReader(path);
+		T deserialized = (T)serializer.Deserialize(reader.BaseStream);
+		reader.Close();
+		return deserialized;
 	}
 }

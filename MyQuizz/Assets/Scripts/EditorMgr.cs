@@ -22,11 +22,13 @@ public class EditorMgr : MonoBehaviour
 	private void Start()
 	{
 		editorCanvas.SetActive(false);
+		CloseCanvas();
 	}
 
 	public void OpenEditor()
 	{
 		editorCanvas.SetActive(true);
+		OpenMainMenu();
 	}
 
 	public void CloseEditor()
@@ -36,12 +38,8 @@ public class EditorMgr : MonoBehaviour
 
 	public void OpenMainMenu()
 	{
+		CloseCanvas();
 		mainMenuCanvas.SetActive(true);
-	}
-
-	public void CloseMainMenu()
-	{
-		mainMenuCanvas.SetActive(false);
 	}
 
 	public void OpenClosestAnswerCanvas()
