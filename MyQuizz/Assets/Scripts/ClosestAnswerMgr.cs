@@ -1,14 +1,33 @@
 using System;
 using System.Collections.Generic;
-using System.Xml;
 using System.Xml.Serialization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Serializable]
+[XmlRoot("DataClosestAnswer")]
+public class DataQuestion
+{
+	[XmlAttribute("questionList")]
+	public List<string> questionList = new List<string>();
+	[XmlAttribute("answerList")]
+	public List<string> answerList = new List<string>();
+}
+
 public class ClosestAnswerMgr : MonoBehaviour
 {
-	#region Game
+	private void Start()
+	{
+		nextQuestionButton.onClick.AddListener(NextQuestion);
+		previousQuestionButton.onClick.AddListener(PreviousQuestion);
+		showAnswerButton.onClick.AddListener(ShowAnswer);
+
+		Load();
+		InitGame();
+	}
+
+	#region GameVariables
 
 	[SerializeField]
 	TextMeshProUGUI questionText;
@@ -24,10 +43,13 @@ public class ClosestAnswerMgr : MonoBehaviour
 	[SerializeField]
 	Button showAnswerButton;
 
-	[SerializeField]
-	DataClosestAnswer data = new DataClosestAnswer();
+	DataQuestion data = new DataQuestion();
 
 	int currentQuestion = 0;
+
+	#endregion
+
+	#region GameMethods
 
 	public void InitGame()
 	{
@@ -86,15 +108,16 @@ public class ClosestAnswerMgr : MonoBehaviour
 
 	#endregion
 
-	#region Editor
+	#region EditorVariables
 
 	[SerializeField]
 	TMP_InputField questionField;
 	[SerializeField]
 	TMP_InputField answerField;
 
-	[SerializeField]
-	string filePath = "/ClosestAnswer.xml";
+	#endregion
+
+	#region EditorMethods 
 
 	public void AddQuestion()
 	{
@@ -140,40 +163,40 @@ public class ClosestAnswerMgr : MonoBehaviour
 		answerField.text = "";
 	}
 
-	public void Save()
+	private void RemoveSpace()
 	{
-		SaveMgr.Serialize(data, filePath);
+		for (int i = 0; i < data.questionList.Count; i++)
+		{
+			data.questionList[i] = SaveMgr.RemoveSpace(data.questionList[i]);
+			data.answerList[i] = SaveMgr.RemoveSpace(data.answerList[i]);
+		}
 	}
 
-	public void Load()
+	private void RecoverSpace()
 	{
-		DataClosestAnswer d = SaveMgr.Deserialize<DataClosestAnswer>(filePath);
-		if (d != null)
+		for (int i = 0; i < data.questionList.Count; i++)
 		{
-			data.questionList = d.questionList;
-			data.answerList = d.answerList;
+			data.questionList[i] = SaveMgr.RecoverSpace(data.questionList[i]);
+			data.answerList[i] = SaveMgr.RecoverSpace(data.answerList[i]);
 		}
 	}
 
 	#endregion
 
-	private void Start()
+	#region SaveAndLoad
+
+	public void Save()
 	{
-		nextQuestionButton.onClick.AddListener(NextQuestion);
-		previousQuestionButton.onClick.AddListener(PreviousQuestion);
-		showAnswerButton.onClick.AddListener(ShowAnswer);
-
-		Load();
-		InitGame();
+		RemoveSpace();
+		SaveMgr.Serialize(data, StaticVariables.filePathClosestAnswer);
 	}
-}
 
-[Serializable]
-[XmlRoot("DataClosestAnswer")]
-public class DataClosestAnswer
-{
-	[XmlAttribute("questionList")]
-	public List<string> questionList = new List<string>();
-	[XmlAttribute("answerList")]
-	public List<string> answerList = new List<string>();
+	public void Load()
+	{
+		DataQuestion d = SaveMgr.Deserialize<DataQuestion>(StaticVariables.filePathClosestAnswer);
+		if (d != null)
+			RecoverSpace();
+	}
+
+	#endregion
 }

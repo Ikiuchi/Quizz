@@ -1,8 +1,11 @@
 using System.Xml.Serialization;
 using System.IO;
+using UnityEngine;
+using System.Runtime.CompilerServices;
 
 public class SaveMgr
 {
+
 	public static void Serialize(object item, string path)
 	{
 		XmlSerializer serializer = new XmlSerializer(item.GetType());
@@ -21,5 +24,15 @@ public class SaveMgr
 		T deserialized = (T)serializer.Deserialize(reader.BaseStream);
 		reader.Close();
 		return deserialized;
+	}
+
+	public static string RemoveSpace(string str)
+	{
+		return str.Replace(' ', '_');
+	}
+
+	public static string RecoverSpace(string str)
+	{
+		return str.Replace('_', ' ');
 	}
 }
