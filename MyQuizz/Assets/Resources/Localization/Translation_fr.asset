@@ -67,7 +67,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 210242758873088
-    m_Localized: Supprime
+    m_Localized: Supprimer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11334981149626368
+    m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11337468522893312
+    m_Localized: "Jeu pr\xE9c\xE9dent"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11338082682245120
+    m_Localized: Jeu suivant
     m_Metadata:
       m_Items: []
   references:
