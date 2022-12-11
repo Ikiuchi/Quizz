@@ -82,6 +82,34 @@ MonoBehaviour:
     m_Localized: Jeu suivant
     m_Metadata:
       m_Items: []
+  - m_Id: 15642999379038208
+    m_Localized: Sauvegarde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15643971778088960
+    m_Localized: Neutre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15644017944793088
+    m_Localized: Rouge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15644025716838400
+    m_Localized: Jaune
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15644037372809216
+    m_Localized: Bleu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15644052304531456
+    m_Localized: Vert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15644069874470912
+    m_Localized: Rose
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

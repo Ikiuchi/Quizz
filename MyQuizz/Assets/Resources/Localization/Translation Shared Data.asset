@@ -79,6 +79,34 @@ MonoBehaviour:
     m_Key: NextGame
     m_Metadata:
       m_Items: []
+  - m_Id: 15642999379038208
+    m_Key: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15643971778088960
+    m_Key: Neutral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15644017944793088
+    m_Key: Red
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15644025716838400
+    m_Key: Yellow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15644037372809216
+    m_Key: Blue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15644052304531456
+    m_Key: Green
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15644069874470912
+    m_Key: Pink
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -601,6 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec51d6ba109ac5f49b6cd4ca8d2a3c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridPanelGame: {fileID: 0}
   gridSizeText: {fileID: 152987361}
   prefabButton: {fileID: 2629930226046167610, guid: 7d82bb5115473c049a3992495f19ac12, type: 3}
-  gridPanel: {fileID: 2015432210}
+  gridPanelEditor: {fileID: 2015432210}
